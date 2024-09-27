@@ -1,0 +1,59 @@
+<form (ngSubmit)="submitGastoFijo()">
+     <div>
+       <label for="esNecesidad">¿Es una necesidad?</label>
+       <input type="checkbox" [(ngModel)]="gastoFijo.esNecesidad" name="esNecesidad">
+     </div>
+   
+     <div>
+       <label for="categoria">Categoría</label>
+       <select [(ngModel)]="gastoFijo.categoria" name="categoria">
+         <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+       </select>
+     </div>
+   
+     <div>
+       <label for="producto">Producto</label>
+       <input type="text" [(ngModel)]="gastoFijo.producto" name="producto" required>
+     </div>
+   
+     <div>
+       <label for="cantidad">Cantidad</label>
+       <input type="number" [(ngModel)]="gastoFijo.cantidad" name="cantidad" required>
+     </div>
+   
+     <div>
+       <label for="costoPorUnidad">Costo por unidad</label>
+       <input type="number" [(ngModel)]="gastoFijo.costoPorUnidad" name="costoPorUnidad" required>
+     </div>
+   
+     <div>
+       <label for="periodicidad">Periodicidad</label>
+       <select [(ngModel)]="gastoFijo.periodicidad" name="periodicidad">
+         <option value="diaria">Diaria</option>
+         <option value="semanal">Semanal</option>
+         <option value="mensual">Mensual</option>
+         <option value="anual">Anual</option>
+         <option value="personalizada">Personalizada</option>
+       </select>
+     </div>
+   
+     <div>
+       <label for="fechaPago">Fecha de pago</label>
+       <input type="date" [(ngModel)]="gastoFijo.fechaPago" name="fechaPago" required>
+     </div>
+   
+     <div>
+       <label for="metodoPago">Método de pago</label>
+       <select [(ngModel)]="gastoFijo.metodoPago" name="metodoPago">
+         <option *ngFor="let metodo of metodosPago" [value]="metodo">{{metodo}}</option>
+       </select>
+     </div>
+   
+     <div>
+       <label for="total">Total</label>
+       <input type="number" [(ngModel)]="gastoFijo.total" [value]="gastoFijo.cantidad * gastoFijo.costoPorUnidad" readonly>
+     </div>
+   
+     <button type="submit">Registrar Gasto Fijo</button>
+   </form>
+   
