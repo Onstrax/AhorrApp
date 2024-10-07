@@ -1,0 +1,55 @@
+/* Contenedor principal */
+.login-container {
+  background-color: var(--background-color); /* Fondo del contenedor */
+  background: rgb(235, 253, 255, 0.70);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  width: 100%;
+  max-width: 550px;
+  margin: 3% auto; /* Centrar el contenedor */
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el contenedor */
+  text-align: center;
+  overflow: auto;
+}
+
+p {
+  font-size: 12px;
+  color: rgb(220, 0, 0);
+}
+
+/* Imagen superior del contenedor */
+.login-image img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Espaciado entre los elementos del formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Botones */
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Botón de registro */
+.register-btn {
+  background-color: var(--secondary-color);
+  margin-top: 15px;
+}
+
+.register-btn:hover {
+  background-color: #cbecc0;
+}

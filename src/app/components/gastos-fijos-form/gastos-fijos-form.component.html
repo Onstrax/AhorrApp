@@ -1,0 +1,147 @@
+<div class="gastos-fijos-container">
+  <h2>Registrar un gasto fijo</h2>
+
+  <form [formGroup]="gastosFijosForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <label for="categoria">Categoría*</label>
+      <select id="categoria" formControlName="categoria">
+        <option value="" disabled selected>Elegir...</option>
+        <option *ngFor="let categoria of categorias" [value]="categoria">
+          {{ categoria }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="producto">Producto o descripción</label>
+      <input
+        id="producto"
+        type="text"
+        formControlName="producto"
+        placeholder="Opcional"
+      />
+    </div>
+
+    <div class="form-row">
+      <label for="necesidad">¿Es una necesidad o un deseo?*</label>
+      <select id="necesidad" formControlName="necesidad">
+        <option value="" disabled selected>Elegir...</option>
+        <option value="necesidad">Necesidad</option>
+        <option value="deseo">Deseo</option>
+      </select>
+    </div>
+
+    <div class="form-row form-row-inline">
+      <label for="cantidad">Cantidad*</label>
+      <input id="cantidad" type="number" formControlName="cantidad" />
+    </div>
+
+    <div class="form-row form-row-inline">
+      <label for="costoUnidad">Costo por unidad ($ COP)*</label>
+      <input id="costoUnidad" type="number" formControlName="costoUnidad" />
+    </div>
+
+    <div class="form-row">
+      <label for="periodicidad">Periodicidad*</label>
+      <select id="periodicidad" formControlName="periodicidad">
+        <option value="" disabled selected>Elegir...</option>
+        <option *ngFor="let periodo of periodos" [value]="periodo">
+          {{ periodo }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="fechaPago">Última fecha en que se pagó*</label>
+      <input id="fechaPago" type="date" formControlName="fechaPago" />
+    </div>
+
+    <div class="form-row">
+      <label for="metodoPago">Método de pago*</label>
+      <select id="metodoPago" formControlName="metodoPago">
+        <option value="" disabled selected>Elegir...</option>
+        <option *ngFor="let metodo of metodosPago" [value]="metodo">
+          {{ metodo }}
+        </option>
+      </select>
+    </div>
+
+    <p>Total: {{ total | currency }}</p>
+
+    <button
+      type="submit"
+      [ngClass]="{
+        'enabled-btn': !gastosFijosForm.invalid,
+        'disabled-btn': gastosFijosForm.invalid
+      }"
+      class="submit-btn"
+    >
+      Registrar gasto
+    </button>
+  </form>
+
+  <h3>Añadir o modificar preferencias</h3>
+  <div class="preferences-section">
+    <div class="preference-group">
+      <input
+        type="text"
+        [(ngModel)]="nuevaCategoria"
+        placeholder="Escribe una categoría"
+      />
+      <button
+        type="button"
+        (click)="modificarPreferencia('add', 'categorias_fijas', 'categoria')"
+      >
+        Añadir categoría
+      </button>
+      <button
+        type="button"
+        (click)="
+          modificarPreferencia('delete', 'categorias_fijas', 'categoria')
+        "
+      >
+        Eliminar categoría
+      </button>
+    </div>
+    <div class="preference-group">
+      <input
+        type="text"
+        [(ngModel)]="nuevoPeriodo"
+        placeholder="Escribe una periodicidad"
+      />
+      <button
+        type="button"
+        (click)="modificarPreferencia('add', 'periodos', 'periodo')"
+      >
+        Añadir periodicidad
+      </button>
+      <button
+        type="button"
+        (click)="modificarPreferencia('delete', 'periodos', 'periodo')"
+      >
+        Eliminar periodo
+      </button>
+    </div>
+    <div class="preference-group">
+      <input
+        type="text"
+        [(ngModel)]="nuevoMetodoPago"
+        placeholder="Escribe un método de pago"
+      />
+      <button
+        type="button"
+        (click)="modificarPreferencia('add', 'metodos_pago', 'pago')"
+      >
+        Añadir método de pago
+      </button>
+      <button
+        type="button"
+        (click)="modificarPreferencia('delete', 'metodos_pago', 'pago')"
+      >
+        Eliminar método de pago
+      </button>
+    </div>
+  </div>
+
+  <button type="button" class="back-btn" (click)="volver()">Volver</button>
+</div>

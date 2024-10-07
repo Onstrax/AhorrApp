@@ -1,0 +1,24 @@
+<div class="main-container">
+  <h1>¡Bienvenido, {{getUser()}}!</h1>
+
+  <div class="menu-grid">
+    <button (click)="navigateTo('gastos-fijos')">
+      <img src="../../../assets/fixed.png" alt="Gastos Fijos" />
+      <p>Gastos Fijos</p>
+    </button>
+    <button (click)="navigateTo('gastos-ocasionales')">
+      <img src="../../../assets/ocassional.png" alt="Gastos Ocasionales" />
+      <p>Gastos Ocasionales</p>
+    </button>
+    <button (click)="navigateTo('gastos-list')">
+      <img src="../../../assets/list.png" alt="Todos mis Gastos" />
+      <p>Todos mis Gastos</p>
+    </button>
+    <button (click)="navigateTo('estadisticas')">
+      <img src="../../../assets/stats2.png" alt="Gráficos y Estadísticas" />
+      <p>Gráficos y Estadísticas</p>
+    </button>
+  </div>
+
+  <button class="logout-btn" (click)="logout()">Cerrar Sesión</button>
+</div>

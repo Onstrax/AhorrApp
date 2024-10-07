@@ -1,1 +1,189 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /*
+     --primary-color: #091924;
+     --secondary-color: #1C6B74;
+     --accent-color: #36E7D5;
+     --background-color: #DAFCCF; 
+     --highlight-color: #FBD880; */
+
+  --primary-color: rgb(9, 25, 36);
+  --secondary-color: rgb(218, 252, 207);
+  --accent-color: rgb(18, 198, 180);
+  --background-color: rgb(235, 253, 255);
+  --highlight-color: rgb(54, 231, 213);
+  --extra-color: rgb(28, 107, 116);
+  --back-color: #28b9aa;
+}
+
+body {
+  background-image: url('assets/fondo6.png'); /* Ruta de la imagen del logo */
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  background-repeat: no-repeat; /* Evita que el logo se repita */
+  background-position: center center; /* Centra el logo en la página */
+  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+  background-color: #f5f5f5; /* Color de fondo de reserva en caso de que la imagen no se cargue */
+  font-family: 'Roboto', sans-serif; /* Asegura una fuente consistente en toda la página */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  overflow: hidden;
+}
+
+
+button {
+  background-color: var(--highlight-color); /* Color de fondo */
+  color: var(--primary-color); /* Color del texto */
+  padding: 7px 12px; /* Espaciado interno */
+  border: 1px solid var(--extra-color); /* Borde de 2px con el color principal */
+  border-radius: 15px; /* Bordes redondeados */
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Transiciones suaves */
+}
+
+/* Transición global para elementos interactivos */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Aplicamos transiciones específicas */
+button,
+a,
+.card {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+/* Efecto hover para botones */
+button:hover {
+  transform: scale(1.05);
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Efecto hover para enlaces */
+a:hover {
+  color: var(--highlight-color);
+  text-decoration: underline;
+}
+
+/* Definición de animación */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicación de animación a elementos */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* Aplicación de la clase a elementos como tarjetas */
+.card {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Preloader (círculo giratorio) */
+.preloader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--primary-color);
+  border-top-color: var(--highlight-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+/* Animación de giro */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ocultar preloader una vez cargado */
+.loaded .preloader {
+  display: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--accent-color);
+  border-color: var(--extra-color);
+}
+
+input:focus {
+  transform: scale(1.02); /* Aumenta ligeramente el tamaño */
+  transition: transform 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .card {
+    margin: 10px;
+    padding: 15px;
+  }
+}
+
+select {
+  appearance: none; /* Elimina el estilo predeterminado del navegador */
+  background-color: var(--background-color);
+  padding: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  /* background-image: url('arrow-icon.svg'); /* Icono personalizado para la flecha */
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}
+
+::placeholder {
+  color: #888888; /* Color más sutil para el placeholder */
+  font-style: italic; /* Texto en cursiva para distinguirlo del texto real */
+}
+
+input,
+textarea,
+select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--primary-color); /* Borde de 2px con el color principal */
+  /*border-radius: 4px; /* Bordes redondeados */
+  box-sizing: border-box;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05);
+  font-family: "Arial", sans-serif; /* Fuente clara y moderna */
+  font-size: 13px; /* Tamaño de texto legible */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+     border-bottom: 2px solid var(--accent-color); /* Cambia el color del borde inferior en foco */
+     outline: none;
+     box-shadow: 0 4px 4px -2px var(--accent-color);
+}

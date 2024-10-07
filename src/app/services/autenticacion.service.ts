@@ -1,35 +1,36 @@
-// src/app/services/atenticacion.service.ts
-
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { apiUrl } from '../urls/apiurl';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AtenticacionService {
-  private isAuthenticated = false;
-  private currentUser: string | null = null;
+export class AutenticacionService {
 
-  login(username: string, password: string): boolean {
-    if (username === 'user' && password === 'password') {
-      this.isAuthenticated = true;
-      this.currentUser = username;
-      localStorage.setItem('user', username);
-      return true;
-    }
-    return false;
+  constructor(private http: HttpClient) {}
+
+  register(username: string, password: string): Observable<boolean> {
+    return this.http.post<boolean>(`${apiUrl}/register`, { username, password });
+  }
+  
+  login(username: string, password: string): Observable<boolean> {
+    return this.http.post<boolean>(`${apiUrl}/login`, { username, password });
   }
 
   logout(): void {
-    this.isAuthenticated = false;
-    this.currentUser = null;
     localStorage.removeItem('user');
   }
 
   isLoggedIn(): boolean {
-    return this.isAuthenticated || localStorage.getItem('user') !== null;
+    return !!localStorage.getItem('user');
+  }
+
+  setCurrentUser(username: string): void {
+    localStorage.setItem('user', username);
   }
 
   getCurrentUser(): string | null {
-    return this.currentUser || localStorage.getItem('user');
+    return localStorage.getItem('user');
   }
 }

@@ -1,0 +1,91 @@
+<div class="gastos-list-container">
+  <h3>Acumulado: {{ acumulado | currency : "COP" }}</h3>
+  <h2>Lista de Gastos Fijos</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Seleccionar</th>
+          <th>Fecha</th>
+          <th>Necesidad/Deseo</th>
+          <th>Categoría</th>
+          <th>Producto</th>
+          <th>Periodo</th>
+          <th>Método de Pago</th>
+          <th>Monto</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let gasto of gastosFijos; let i = index"
+          (click)="toggleSeleccionado('fijos', i); actualizarAcumulado()"
+        >
+          <td><input type="checkbox" [(ngModel)]="checkboxFijos[i]" /></td>
+          <td>{{ gasto.fecha | date }}</td>
+          <td>{{ gasto.esNecesidad ? "Necesidad" : "Deseo" }}</td>
+          <td>{{ gasto.categoria }}</td>
+          <td>{{ gasto.producto }}</td>
+          <td>{{ gasto.periodo }}</td>
+          <td>{{ gasto.metodoPago }}</td>
+          <td>{{ gasto.monto | currency : "COP" }}</td>
+          <td>
+            <button
+              type="button"
+              (click)="eliminarGasto(gasto, 'fijos'); $event.stopPropagation()"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Lista de Gastos Ocasionales</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Seleccionar</th>
+          <th>Es Necesidad</th>
+          <th>Categoría</th>
+          <th>Producto</th>
+          <th>Fecha</th>
+          <th>Método de Pago</th>
+          <th>Monto</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let gasto of gastosOcasionales; let i = index"
+          (click)="toggleSeleccionado('ocasionales', i); actualizarAcumulado()"
+        >
+          <td>
+            <input type="checkbox" [(ngModel)]="checkboxOcasionales[i]" />
+          </td>
+          <td>{{ gasto.esNecesidad ? "Necesidad" : "Deseo" }}</td>
+          <td>{{ gasto.categoria }}</td>
+          <td>{{ gasto.producto }}</td>
+          <td>{{ gasto.fecha | date }}</td>
+          <td>{{ gasto.metodoPago }}</td>
+          <td>{{ gasto.monto | currency : "COP" }}</td>
+          <td>
+            <button
+              type="button"
+              (click)="
+                eliminarGasto(gasto, 'ocasionales'); $event.stopPropagation()
+              "
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button type="button" class="volver-btn" (click)="volver()">Volver</button>
+</div>

@@ -1,0 +1,130 @@
+/* Contenedor general que mantiene el contenido dentro del vh */
+.gastos-list-container {
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     padding: 20px;
+     box-sizing: border-box;
+     background-color: rgb(235, 253, 255, 0.70);
+     background: rgb(235, 253, 255, 0.70);
+     backdrop-filter: blur(10px);
+   }
+
+   h3 {
+     margin-top: 0;
+     margin-bottom: 0;
+   }
+   
+   /* Estilos para las tablas */
+   .table-container {
+     flex: 1;
+     overflow-y: auto;
+     margin: 0;
+     background: rgb(235, 253, 255, 0.70);
+     border-radius: 12px;
+     padding: 0px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     backdrop-filter: blur(200px);
+     max-height: 45vh;
+   }
+   
+   /* Ajustar las tablas para que ocupen un tamaño fijo */
+   table {
+     width: 100%;
+     border-collapse: collapse;
+   }
+   
+   thead {
+     background-color: var(--primary-color);
+     color: var(--secondary-color);
+     position: sticky;
+     top: 0;
+     z-index: 2;
+   }
+   
+   th, td {
+     padding: 0.5rem;
+     text-align: left;
+     border-bottom: 1px solid #ddd;
+   }
+
+   td {
+     padding: 0.1rem;
+     cursor: pointer;
+   }
+   
+   /* Botones de eliminar */
+   button {
+     background-color: var(--extra-color);
+     color: white;
+     border: none;
+     padding: 5px 10px;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+   
+   button:hover {
+     background-color: rgb(49, 177, 192);
+   }
+   
+   /* Para que las tablas ocupen espacio limitado */
+   table th, table td {
+     white-space: nowrap;
+   }
+
+   /* Botón de volver */
+   .volver-btn {
+     margin-top: 10px;
+     background-color: var(--extra-color);
+     color: white;
+     border: 1px solid var(--primary-color);
+     padding: 10px 20px;
+     border-radius: 6px;
+     cursor: pointer;
+   }
+   
+   .volver-btn:hover {
+     background-color: var(--back-color);
+   }
+   
+   /* Estilos generales para el checkbox */
+input[type="checkbox"] {
+     appearance: none;
+     width: 24px;
+     height: 24px;
+     border: 2px solid var(--primary-color);
+     border-radius: 4px;
+     background-color: #fff;
+     cursor: pointer;
+     transition: background-color 0.2s ease, border-color 0.2s ease;
+     display: inline-block;
+     position: relative;
+   }
+   
+   /* Estado del checkbox cuando está marcado */
+   input[type="checkbox"]:checked {
+     background-color: var(--primary-color);
+     border-color: var(--primary-color);
+   }
+   
+   /* Icono de verificación dentro del checkbox */
+   input[type="checkbox"]:checked::after {
+     content: '';
+     position: absolute;
+     left: 6px;
+     top: 1px;
+     width: 5px;
+     height: 10px;
+     border: solid var(--secondary-color);
+     border-width: 0 4px 4px 0;
+     transform: rotate(45deg);
+   }
+
+   th {
+     background-color: var(--primary-color); /* Fondo para los th */
+     color: var(--secondary-color); /* Color del texto */
+     position: sticky;
+     top: 0;
+     z-index: 10; /* Mantener los encabezados encima del contenido */
+   }
+   

@@ -1,0 +1,123 @@
+/* Contenedor general para mantener el contenido dentro del vh */
+.estadisticas-container {
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     padding: 20px;
+     box-sizing: border-box;
+     background-color: var(--background-color);
+     overflow: hidden;
+     background: rgb(235, 253, 255, 0.70);
+     backdrop-filter: blur(10px);
+   }
+
+   h2 {
+     margin: 0;
+     margin-bottom: 5px;
+   }
+
+   
+   /* Contenedor para las gráficas usando CSS Grid */
+   .graficas-container {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr); /* Siempre 2 columnas con igual ancho */
+     grid-gap: 20px; /* Espacio entre las gráficas */
+     margin: 0;
+     padding: 20px;
+     background: var(--background-color);
+     backdrop-filter: blur(10px);
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     max-height: 75vh;
+     overflow-y: auto;
+   }
+   
+   /* Estilos para cada gráfica */
+   .grafica {
+     width: 70%;
+     height: auto;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--background-color);
+     padding: 20px;
+     box-sizing: border-box;
+   }
+   
+   /* Mantener la proporción de las gráficas */
+   canvas {
+     width: 100%;
+     height: auto;
+     aspect-ratio: 1/1; /* Mantiene la proporción 1:1 para las gráficas */
+   }
+   
+   /* Contenedor para alinear el select y los campos de fecha en la misma fila */
+   .periodo-container {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     flex-wrap: wrap;
+     margin-bottom: 10px;
+   }
+   
+   /* Alinear "Desde" y "Hasta" en la misma fila */
+   .periodo-fechas {
+     display: flex;
+     align-items: center;
+     gap: 10px; /* Espacio entre los elementos */
+   }
+   
+   /* Ajustar select, input de fecha y botón para que ocupen el espacio necesario sin desbordar */
+   #periodo, #desde, #hasta {
+     width: auto;
+     padding: 10px;
+     border-radius: 6px;
+     border: 1px solid var(--primary-color);
+     background-color: white;
+     color: var(--primary-color);
+   }
+   
+   .periodo-container button {
+     padding: 10px 20px;
+     background-color: var(--extra-color);
+     color: white;
+     border-radius: 6px;
+     border: none;
+     cursor: pointer;
+   }
+   
+   .periodo-container button:hover {
+     background-color: var(--highlight-color);
+   }
+   
+   .total-label{
+    font-weight: bold;
+    background-color: rgb(147, 241, 241);
+    max-width: 35%;
+    border-radius: 5px;
+    padding: 2px;
+   }
+
+   /* Botones generales */
+   button {
+     background-color: var(--extra-color);
+     color: white;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 6px;
+     cursor: pointer;
+     margin-top: 20px;
+   }
+   
+   button:hover {
+     background-color: var(--back-color);
+   }
+   
+   /* Estilo para el texto de total gastado */
+   label {
+     display: block;
+     margin-bottom: 10px;
+     font-size: 18px;
+     color: var(--primary-color);
+   }
+   

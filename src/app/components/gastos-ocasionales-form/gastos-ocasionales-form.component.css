@@ -1,0 +1,101 @@
+.gastos-ocasionales-container {
+     background-color: var(--background-color);
+     padding: 30px;
+     max-width: 600px;
+     margin: 0 auto;
+     margin-top: 2rem;
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     background: rgb(235, 253, 255, 0.70);
+     backdrop-filter: blur(10px);
+     max-height: 80vh;
+     overflow: auto;
+   }
+   
+   .form-row {
+     margin-bottom: 20px;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+   }
+   
+   .form-row-inline {
+     display: flex;
+     justify-content: space-between;
+   }
+   
+   .form-row-inline input {
+     width: 40%;
+   }
+   
+   .submit-btn {
+     padding: 10px 20px;
+     border-radius: 6px;
+     font-size: 16px;
+     width: 100%;
+     border: 1px solid var(--primary-color);
+     cursor: pointer;
+     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+   }
+   
+   .submit-btn.enabled-btn {
+     background-color: var(--primary-color);
+     color: var(--secondary-color);
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   }
+   
+   .submit-btn.enabled-btn:hover {
+     background-color: var(--extra-color);
+     transform: translateY(-3px);
+   }
+   
+   .submit-btn.disabled-btn {
+     background-color: #d3d3d3;
+     color: #a0a0a0;
+     cursor: not-allowed;
+     box-shadow: none;
+   }
+   
+   .preferences-section {
+     margin-top: 30px;
+   }
+   
+   .preference-group {
+     margin-bottom: 15px;
+     display: flex;
+     justify-content: space-between;
+   }
+   
+   .preference-group input {
+     width: 60%;
+   }
+   
+   .preference-group button {
+     width: 18%;
+     background-color: #b4fe9b;
+     color: var(--primary-color);
+     border: 1px solid var(--primary-color);
+     padding: 10px;
+     border-radius: 6px;
+     cursor: pointer;
+   }
+   
+   .preference-group button:hover {
+     background-color: var(--secondary-color);
+   }
+   
+   .back-btn {
+     margin-top: 20px;
+     background-color: var(--extra-color);
+     color: white;
+     border: 1px solid var(--primary-color);
+     padding: 10px 20px;
+     border-radius: 6px;
+     cursor: pointer;
+   }
+   
+   .back-btn:hover {
+     background-color: var(--back-color);
+   }
+   

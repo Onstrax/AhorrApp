@@ -1,0 +1,54 @@
+<div class="estadisticas-container">
+  <h2>Visualización de Gastos</h2>
+
+  <!-- Contenedor para alinear el select y los campos de fecha -->
+  <div class="periodo-container">
+    <label for="periodo">Seleccione un periodo:</label>
+    <select
+      id="periodo"
+      [(ngModel)]="periodoSeleccionado"
+      (change)="actualizarVisualizacion()"
+    >
+      <option value="0">Hoy</option>
+      <option value="7">Últimos 7 días</option>
+      <option value="30">Últimos 30 días</option>
+      <option value="365">Últimos 365 días</option>
+      <option value="personalizado">Personalizado</option>
+    </select>
+
+    <!-- Contenedor para alinear "Desde" y "Hasta" -->
+    <div *ngIf="periodoSeleccionado === 'personalizado'" class="periodo-fechas">
+      <label for="desde">Desde:</label>
+      <input type="date" id="desde" [(ngModel)]="fechaDesde" />
+
+      <label for="hasta">Hasta:</label>
+      <input type="date" id="hasta" [(ngModel)]="fechaHasta" />
+
+      <button type="button" (click)="actualizarVisualizacion()">Enviar</button>
+    </div>
+  </div>
+  <div class="total-container">
+    <label class="total-label"
+      >Total gastado en el periodo: {{ total | currency }} COP</label
+    >
+  </div>
+
+  <div class="graficas-container">
+    <div class="grafica">
+      <h3>Gastos por Categoría</h3>
+      <canvas id="graficoCategoria"></canvas>
+    </div>
+
+    <div class="grafica">
+      <h3>Gastos por Método de Pago</h3>
+      <canvas id="graficoMetodoPago"></canvas>
+    </div>
+
+    <div class="grafica">
+      <h3>Gastos por Tipo</h3>
+      <canvas id="graficoTipo"></canvas>
+    </div>
+  </div>
+
+  <button type="button" (click)="volver()">Volver</button>
+</div>
