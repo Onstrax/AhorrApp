@@ -10,12 +10,12 @@ export class AutenticacionService {
 
   constructor(private http: HttpClient) {}
 
-  register(username: string, password: string): Observable<boolean> {
-    return this.http.post<boolean>(`${apiUrl}/register`, { username, password });
+  register(username: string, password: string, whatsapp: string): Observable<boolean> {
+    return this.http.post<boolean>(`${apiUrl}/register`, { username, password, whatsapp });
   }
   
-  login(username: string, password: string): Observable<boolean> {
-    return this.http.post<boolean>(`${apiUrl}/login`, { username, password });
+  login(username: string, password: string, whatsapp: string): Observable<boolean> {
+    return this.http.post<boolean>(`${apiUrl}/login`, { username, password, whatsapp });
   }
 
   logout(): void {
@@ -33,4 +33,5 @@ export class AutenticacionService {
   getCurrentUser(): string | null {
     return localStorage.getItem('user');
   }
+
 }

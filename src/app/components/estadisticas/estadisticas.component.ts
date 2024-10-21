@@ -75,7 +75,7 @@ export class EstadisticasComponent implements AfterViewInit {
     }
     else {
       if (this.fechaHasta == ""){this.fechaHasta = new Date().toISOString().split('T')[0]}
-      console.log(" a ", this.fechaDesde," xd ", this.fechaHasta)
+      //console.log(" a ", this.fechaDesde," xd ", this.fechaHasta)
       this.gastosService
         .obtenerGastos(localStorage.getItem('user')!, this.fechaDesde, this.fechaHasta)
         .subscribe(

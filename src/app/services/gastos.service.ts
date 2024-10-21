@@ -3,12 +3,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { apiUrl } from '../urls/apiurl';
 import { GastoFijo, GastoOcasional } from '../models/gasto.model';
+import { AutenticacionService } from './autenticacion.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GastosService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, 
+    private authService: AutenticacionService) {}
 
   registrarGastoOcasional(gasto: GastoOcasional): Observable<boolean> {
     return this.http.post<boolean>(`${apiUrl}/gastos/ocasionales`, {
@@ -62,8 +64,9 @@ export class GastosService {
 
   deleteGasto(gasto: GastoOcasional, tabla: string): Observable<void> {
     // Envía el objeto gasto junto con la tabla al backend
+    let user = this.authService.getCurrentUser()!;
     return this.http.request<void>('delete', `${apiUrl}/gastos-list`, {
-      body: { gasto, tabla }  // Envía el gasto y la tabla en el cuerpo de la solicitud
+      body: { gasto, tabla, user }  // Envía el gasto y la tabla en el cuerpo de la solicitud
     });
   }
   

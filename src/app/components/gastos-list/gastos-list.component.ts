@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { GastosService } from '../../services/gastos.service';
 import { GastoFijo, GastoOcasional } from '../../models/gasto.model';
+import { AutenticacionService } from '../../services/autenticacion.service';
 
 @Component({
   selector: 'app-gastos-list',
@@ -68,6 +69,7 @@ export class GastosListComponent implements OnInit {
     this.gastosService.obtenerGastosList().subscribe(
       (respuesta) => {
       this.gastosFijos = respuesta.fijos;
+      //console.log(respuesta.fijos)
       this.gastosOcasionales = respuesta.ocasionales;
     },
     (error) => {

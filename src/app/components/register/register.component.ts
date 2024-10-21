@@ -29,12 +29,13 @@ export class RegisterComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
       confirm: ['', Validators.required],
+      whatsapp: ['', Validators.required],
     });
   }
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      const { username, password, confirm } = this.registerForm.value;
+      const { username, password, confirm, whatsapp } = this.registerForm.value;
       if (password != confirm) {
         Swal.fire({
           title: '¡Oops!',
@@ -48,7 +49,7 @@ export class RegisterComponent implements OnInit {
         });
       } else {
         this.authService
-          .register(username, password)
+          .register(username, password, whatsapp)
           .subscribe((success: boolean) => {
             if (success) {
               Swal.fire({

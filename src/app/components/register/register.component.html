@@ -14,8 +14,31 @@
         formControlName="username"
         placeholder="Ingresa tu usuario"
       />
-      <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
+      <div
+        *ngIf="
+          registerForm.get('username')?.invalid &&
+          registerForm.get('username')?.touched
+        "
+      >
         <p>El usuario es obligatorio</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="whatsapp">Número de Whatsapp: </label>
+      <input
+        id="whatsapp"
+        type="text"
+        formControlName="whatsapp"
+        placeholder="Ingresa tu número"
+      />
+      <div
+        *ngIf="
+          registerForm.get('whatsapp')?.invalid &&
+          registerForm.get('whatsapp')?.touched
+        "
+      >
+        <p>El número es obligatorio</p>
       </div>
     </div>
 
@@ -27,7 +50,12 @@
         formControlName="password"
         placeholder="Ingresa tu contraseña"
       />
-      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+      <div
+        *ngIf="
+          registerForm.get('password')?.invalid &&
+          registerForm.get('password')?.touched
+        "
+      >
         <p>La contraseña es obligatoria</p>
       </div>
     </div>
@@ -40,14 +68,24 @@
         formControlName="confirm"
         placeholder="Confirma tu contraseña"
       />
-      <div *ngIf="registerForm.get('confirm')?.invalid && registerForm.get('confirm')?.touched">
+      <div
+        *ngIf="
+          registerForm.get('confirm')?.invalid &&
+          registerForm.get('confirm')?.touched
+        "
+      >
         <p>La confirmación es obligatoria</p>
       </div>
     </div>
 
     <div class="form-group">
       <label for="show">Mostrar contraseña</label>
-      <input id="show" type="checkbox" [(ngModel)]="show" [ngModelOptions]="{standalone: true}">
+      <input
+        id="show"
+        type="checkbox"
+        [(ngModel)]="show"
+        [ngModelOptions]="{ standalone: true }"
+      />
     </div>
 
     <button type="submit" class="submit-btn">Registrarme</button>
