@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="gastos-fijos-container">
   <h2>Registrar un gasto fijo</h2>
 
@@ -90,12 +91,14 @@
       />
       <button
         type="button"
+        class="add-btn"
         (click)="modificarPreferencia('add', 'categorias_fijas', 'categoria')"
       >
         Añadir categoría
       </button>
       <button
         type="button"
+        class="delete-btn"
         (click)="
           modificarPreferencia('delete', 'categorias_fijas', 'categoria')
         "
@@ -111,12 +114,14 @@
       />
       <button
         type="button"
+        class="add-btn"
         (click)="modificarPreferencia('add', 'periodos', 'periodo')"
       >
         Añadir periodicidad
       </button>
       <button
         type="button"
+        class="delete-btn"
         (click)="modificarPreferencia('delete', 'periodos', 'periodo')"
       >
         Eliminar periodo
@@ -130,12 +135,14 @@
       />
       <button
         type="button"
+        class="add-btn"
         (click)="modificarPreferencia('add', 'metodos_pago', 'pago')"
       >
         Añadir método de pago
       </button>
       <button
         type="button"
+        class="delete-btn"
         (click)="modificarPreferencia('delete', 'metodos_pago', 'pago')"
       >
         Eliminar método de pago
@@ -143,5 +150,5 @@
     </div>
   </div>
 
-  <button type="button" class="back-btn" (click)="volver()">Volver</button>
+  <!--button type="button" class="back-btn" (click)="volver()">Volver</button-->
 </div>

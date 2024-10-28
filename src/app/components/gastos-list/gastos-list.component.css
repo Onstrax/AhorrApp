@@ -8,6 +8,7 @@
      background-color: rgb(235, 253, 255, 0.70);
      background: rgb(235, 253, 255, 0.70);
      backdrop-filter: blur(10px);
+     padding-bottom: 4rem;
    }
 
    h3 {
@@ -126,5 +127,13 @@ input[type="checkbox"] {
      position: sticky;
      top: 0;
      z-index: 10; /* Mantener los encabezados encima del contenido */
+   }
+
+   .total-label{
+    font-weight: bold;
+    background-color: rgb(147, 241, 241);
+    width: 25%;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
    }
    

@@ -12,6 +12,7 @@
      backdrop-filter: blur(10px);
      max-height: 80vh;
      overflow: auto;
+     margin-top: 1rem;
    }
    
    /* Estilo para las filas del formulario */
@@ -91,6 +92,7 @@
    .preference-group button:hover {
      background-color: var(--secondary-color);
    }
+
    
    /* Botón de volver */
    .back-btn {
@@ -105,5 +107,13 @@
    
    .back-btn:hover {
      background-color: var(--back-color);
-   }
-   
+    }
+    
+    .preference-group .delete-btn {
+      background-color: rgb(254, 73, 73);
+    }
+    
+    .preference-group .delete-btn:hover {
+      background-color: rgb(255, 120, 120);
+      
+    }

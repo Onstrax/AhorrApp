@@ -13,16 +13,20 @@ import { routes } from './app.routes'; // Tus rutas definidas en app.routes.ts
 import { GastosOcasionalesFormComponent } from './components/gastos-ocasionales-form/gastos-ocasionales-form.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { GastosListComponent } from './components/gastos-list/gastos-list.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     GastosFijosFormComponent,
     GastosOcasionalesFormComponent,
     LoginComponent,
     EstadisticasComponent,
     RegisterComponent,
-    GastosListComponent
+    GastosListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -184,6 +184,9 @@ input:focus,
 textarea:focus,
 select:focus {
      border-bottom: 2px solid var(--accent-color); /* Cambia el color del borde inferior en foco */
+     border-bottom: 2px solid #004a41; /* Cambia el color del borde inferior en foco */
      outline: none;
      box-shadow: 0 4px 4px -2px var(--accent-color);
+     box-shadow: 0 4px 4px -2px #004a41;
 }
+

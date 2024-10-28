@@ -1,5 +1,6 @@
+<app-navbar></app-navbar>
 <div class="gastos-list-container">
-  <h3>Acumulado: {{ acumulado | currency : "COP" }}</h3>
+  <h3 class="total-label">Acumulado: {{ acumulado | currency : "COP" }}</h3>
   <h2>Lista de Gastos Fijos</h2>
 
   <div class="table-container">
@@ -87,5 +88,5 @@
     </table>
   </div>
 
-  <button type="button" class="volver-btn" (click)="volver()">Volver</button>
+  <!--button type="button" class="volver-btn" (click)="volver()">Volver</-button-->
 </div>
