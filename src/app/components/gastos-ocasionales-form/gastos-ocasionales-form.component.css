@@ -9,9 +9,9 @@
      text-align: center;
      background: rgb(235, 253, 255, 0.70);
      backdrop-filter: blur(10px);
-     max-height: 80vh;
+     max-height: 85vh;
      overflow: auto;
-     margin-top: 1rem;
+     margin-top: 2rem;
    }
    
    .form-row {

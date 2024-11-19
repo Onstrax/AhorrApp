@@ -8,11 +8,9 @@ import { GastosOcasionalesFormComponent } from './components/gastos-ocasionales-
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { GastosListComponent } from './components/gastos-list/gastos-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LandingComponent } from './components/landing/landing.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },  // Página de inicio es el login
-  { path: 'landing', component: LandingComponent },
   { path: 'home', component: HomeComponent, canActivate: [AutenticacionGuard] },  // Página de inicio después del login
   { path: 'register', component: RegisterComponent },
   { path: 'navbar', component: NavbarComponent },

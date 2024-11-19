@@ -15,12 +15,10 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
 import { GastosListComponent } from './components/gastos-list/gastos-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
     HomeComponent,
     GastosFijosFormComponent,
     GastosOcasionalesFormComponent,

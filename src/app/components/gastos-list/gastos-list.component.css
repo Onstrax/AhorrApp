@@ -9,6 +9,8 @@
      background: rgb(235, 253, 255, 0.70);
      backdrop-filter: blur(10px);
      padding-bottom: 4rem;
+     padding-left: 5rem;
+     padding-right: 3rem;
    }
 
    h3 {

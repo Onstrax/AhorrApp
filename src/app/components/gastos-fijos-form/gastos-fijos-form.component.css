@@ -4,15 +4,14 @@
      padding: 30px;
      max-width: 600px;
      margin: 0 auto;
-     margin-top: 2rem;
      border-radius: 12px;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
      text-align: center;
      background: rgb(235, 253, 255, 0.70);
      backdrop-filter: blur(10px);
-     max-height: 80vh;
+     max-height: 85vh;
      overflow: auto;
-     margin-top: 1rem;
+     margin-top: 2rem;
    }
    
    /* Estilo para las filas del formulario */

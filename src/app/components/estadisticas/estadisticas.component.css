@@ -11,6 +11,8 @@
      backdrop-filter: blur(10px);
      margin-top: 0;
      padding-bottom: 5rem;
+     padding-left: 5rem;
+     padding-right: 3rem;
    }
 
    h2 {
