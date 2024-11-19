@@ -1,3 +1,4 @@
+/* Barra de navegación sin hover global */
 .navbar {
   display: flex;
   align-items: center;
@@ -7,16 +8,16 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1100; /* Por encima del menú */
+  z-index: 1100;
   padding: 10px 20px;
   font-family: Arial, sans-serif;
   transition: background-color 0.3s ease-in-out;
 }
 
-.navbar:hover {
-  background-color: #004a41; /* Color sólido al interactuar */
+.navbar.open {
+  background-color: rgb(0, 74, 65); /* Color con transparencia al abrir */
+  transition: 0.2s;
 }
-
 
 .burger-menu {
   background: none;
@@ -24,7 +25,19 @@
   color: white;
   font-size: 24px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out, color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px; /* Bordes redondeados para resaltar solo el área cercana */
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.burger-menu.open {
+  background-color: rgb(0, 74, 65); /* Color con transparencia al abrir */
+}
+
+/* Efecto hover en el botón */
+.burger-menu:hover {
+  background-color: rgb(0, 74, 65);
+  transform: scale(1.1); /* Pequeño zoom para resaltar el botón */
 }
 
 .burger-menu:active {
@@ -39,7 +52,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0); /* Fondo transparente por defecto */
+  background-color: rgba(255, 0, 0, 0); /* Fondo transparente por defecto */
   color: white;
   position: fixed; /* Superpone al resto del contenido */
   top: 50px; /* Ajusta para colocarlo debajo de la barra */

@@ -1,6 +1,6 @@
 <div class="backdrop" *ngIf="menuOpen" (click)="toggleMenu()"></div>
 
-<nav class="navbar">
+<nav class="navbar" [class.open]="menuOpen">
   <button class="burger-menu" (click)="toggleMenu()">
     &#9776;
     <!-- Icono de hamburguesa -->
